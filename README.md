@@ -1,42 +1,89 @@
-# sv
+# Roti Artisan Landing Page
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, responsive landing page for Roti Artisan bakery built with SvelteKit and Tailwind CSS v4.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Framework**: SvelteKit 2 with Svelte 5
+- **Styling**: Tailwind CSS v4 with Typography and Forms plugins
+- **Icons**: Lucide Svelte
+- **Build**: Static site generation with precompression (Brotli/Gzip)
+
+## Features
+
+- Fully responsive design optimized for mobile and desktop
+- Smooth scroll animations with Intersection Observer
+- SEO optimized with JSON-LD structured data (LocalBusiness schema)
+- Static site generation for optimal Core Web Vitals
+- Precompressed assets for faster delivery
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
 
 ```sh
-# create a new project
-npx sv create my-app
+npm install
 ```
 
-To recreate this project with the same configuration:
+### Development
 
-```sh
-# recreate this project
-npx sv create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" --install npm ./
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the development server:
 
 ```sh
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-To create a production version of your app:
+### Building
+
+Create a production build:
 
 ```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+The static site is generated in the `build` folder with precompressed `.br` and `.gz` files.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Preview
+
+Preview the production build locally:
+
+```sh
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+  routes/
+    +layout.svelte    # Root layout with favicon
+    +layout.ts        # Prerender configuration
+    +page.svelte      # Main landing page
+    layout.css        # Global styles and design tokens
+  lib/
+    components/       # Reusable UI components
+    data/             # Product and testimonial data
+    assets/           # Static assets (favicon)
+static/
+  robots.txt          # Search engine crawl rules
+  sitemap.xml         # Sitemap for SEO
+```
+
+## SEO Configuration
+
+Before deployment, update the placeholder domain in:
+
+- `src/routes/+page.svelte` - canonical URL, og:url, JSON-LD data
+- `static/robots.txt` - sitemap location
+- `static/sitemap.xml` - page URLs
+
+## License
+
+Private project.
