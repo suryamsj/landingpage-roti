@@ -1,3 +1,135 @@
+/* Google Fonts Import - must be first */
+/* Google Fonts with display=swap for better CLS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* ========================================
+   DESIGN TOKENS - Premium Family Bakery
+   ======================================== */
+
+@theme {
+	/* Typography */
+	--font-heading: 'Playfair Display', Georgia, serif;
+	--font-body: 'Inter', system-ui, sans-serif;
+
+	/* Colors - Warm Brown Palette */
+	--color-primary-50: oklch(0.97 0.01 55);
+	--color-primary-100: oklch(0.93 0.02 55);
+	--color-primary-200: oklch(0.85 0.04 55);
+	--color-primary-300: oklch(0.75 0.07 55);
+	--color-primary-400: oklch(0.65 0.10 50);
+	--color-primary-500: oklch(0.55 0.12 45);
+	--color-primary-600: oklch(0.45 0.12 40);
+	--color-primary-700: oklch(0.38 0.10 38);
+	--color-primary-800: oklch(0.32 0.08 35);
+	--color-primary-900: oklch(0.25 0.06 35);
+
+	/* Cream / Beige */
+	--color-cream-50: oklch(0.99 0.005 85);
+	--color-cream-100: oklch(0.97 0.01 80);
+	--color-cream-200: oklch(0.94 0.02 75);
+	--color-cream-300: oklch(0.90 0.03 70);
+	--color-cream-400: oklch(0.85 0.04 65);
+
+	/* Neutrals */
+	--color-neutral-50: oklch(0.98 0.002 250);
+	--color-neutral-100: oklch(0.96 0.004 250);
+	--color-neutral-200: oklch(0.92 0.006 250);
+	--color-neutral-300: oklch(0.87 0.008 250);
+	--color-neutral-400: oklch(0.70 0.01 250);
+	--color-neutral-500: oklch(0.55 0.01 250);
+	--color-neutral-600: oklch(0.45 0.01 250);
+	--color-neutral-700: oklch(0.35 0.01 250);
+	--color-neutral-800: oklch(0.25 0.01 250);
+	--color-neutral-900: oklch(0.15 0.01 250);
+
+	/* Shadows */
+	--shadow-soft: 0 2px 8px oklch(0.25 0.02 45 / 0.08);
+	--shadow-medium: 0 4px 16px oklch(0.25 0.02 45 / 0.12);
+	--shadow-large: 0 8px 32px oklch(0.25 0.02 45 / 0.16);
+
+	/* Border Radius */
+	--radius-sm: 0.375rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	--radius-xl: 1rem;
+	--radius-2xl: 1.5rem;
+	--radius-full: 9999px;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-body);
+	color: var(--color-neutral-800);
+	background-color: var(--color-cream-50);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-heading);
+	color: var(--color-primary-800);
+	line-height: 1.2;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.container-custom {
+	width: 100%;
+	max-width: 1280px;
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.container-custom {
+		padding-inline: 2rem;
+	}
+}
+
+.section-padding {
+	padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+	.section-padding {
+		padding-block: 6rem;
+	}
+}
+
+/* Gradient overlay for hero */
+.hero-gradient {
+	background: linear-gradient(
+		135deg,
+		var(--color-cream-100) 0%,
+		var(--color-cream-200) 50%,
+		var(--color-primary-100) 100%
+	);
+}
+
+/* Card hover effect */
+.card-hover {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-medium);
+}

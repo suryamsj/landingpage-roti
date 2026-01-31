@@ -1,3 +1,11 @@
-# allow crawling everything by default
+# robots.txt - Roti Artisan
+# https://your-url.com
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://your-url.com/sitemap.xml
+
+# Crawl delay for politeness (optional, some crawlers respect this)
+Crawl-delay: 1
