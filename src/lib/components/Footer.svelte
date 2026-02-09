@@ -5,7 +5,7 @@
 
 	const socialLinks = [
 		{ icon: Instagram, label: 'Instagram', href: 'https://instagram.com/rotiartisan' },
-		{ icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/6281234567890' }
+		{ icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/123456' }
 	];
 
 	const quickLinks = [
@@ -85,7 +85,7 @@
 					<p class="flex items-center gap-3">
 						<MessageCircle class="h-4 w-4 shrink-0" />
 						<a
-							href="https://wa.me/6281234567890"
+							href="https://wa.me/123456"
 							class="transition-colors hover:text-primary-600"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -118,7 +118,7 @@
 
 				<!-- Order CTA -->
 				<a
-					href="https://wa.me/6281234567890?text=Halo, saya ingin order roti"
+					href="https://wa.me/123456?text=Halo, saya ingin order roti"
 					class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#25d366] to-[#128c7e] px-6 py-3.5 font-semibold text-white shadow-[−4px_-4px_8px_rgba(255,255,255,0.6),4px_4px_8px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-0.5"
 					target="_blank"
 					rel="noopener noreferrer"

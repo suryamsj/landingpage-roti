@@ -299,7 +299,7 @@
 						<Button
 							variant="primary"
 							size="lg"
-							href="https://wa.me/6281234567890?text=Halo, saya ingin order roti"
+							href="https://wa.me/62123456?text=Halo, saya ingin order roti"
 						>
 							<MessageCircle class="mr-2 h-5 w-5" />
 							Order via WhatsApp
@@ -399,7 +399,7 @@
 					<Button
 						variant="primary"
 						size="lg"
-						href="https://wa.me/6281234567890?text=Halo, saya ingin order roti"
+						href="https://wa.me/123456?text=Halo, saya ingin order roti"
 					>
 						<MessageCircle class="mr-2 h-5 w-5" />
 						Mulai Order Sekarang
@@ -525,7 +525,7 @@
 					</p>
 					<div in:scale={{ start: 0.8, duration: 600, delay: 300, easing: backOut }}>
 						<a
-							href="https://wa.me/6281234567890?text=Halo, saya ingin order roti"
+							href="https://wa.me/123456?text=Halo, saya ingin order roti"
 							class="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-bold text-primary-600 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -562,7 +562,7 @@
 									Chat langsung untuk order atau tanya-tanya seputar produk.
 								</p>
 								<a
-									href="https://wa.me/6281234567890"
+									href="https://wa.me/123456"
 									class="inline-flex items-center gap-2 rounded-lg bg-[#25d366] px-6 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
 									target="_blank"
 									rel="noopener noreferrer"
