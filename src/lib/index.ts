@@ -6,6 +6,10 @@ export { default as ProductCard } from './components/ProductCard.svelte';
 export { default as TestimonialCard } from './components/TestimonialCard.svelte';
 export { default as FeatureCard } from './components/FeatureCard.svelte';
 export { default as Footer } from './components/Footer.svelte';
+export { default as AnnouncementBar } from './components/AnnouncementBar.svelte';
+export { default as OrderStepCard } from './components/OrderStepCard.svelte';
+export { default as FaqItem } from './components/FaqItem.svelte';
+export { default as ContactCard } from './components/ContactCard.svelte';
 
 // Data
 export { products } from './data/products';

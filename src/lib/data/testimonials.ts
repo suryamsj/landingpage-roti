@@ -8,19 +8,19 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
     {
         id: '1',
-        quote: 'Bakery ini sudah seperti rumah kedua. Setiap gigitan terasa penuh kehangatan dan cita rasa yang tak terlupakan. Sourdough-nya terbaik!',
+        quote: 'Sistem PO-nya sangat memudahkan! Pesan H-3, rotinya sampai fresh dan hangat. Sourdough-nya terbaik yang pernah saya coba!',
         name: 'Ibu Sarah M.',
-        role: 'Pelanggan Setia'
+        role: 'Pelanggan Premium'
     },
     {
         id: '2',
-        quote: 'Kami sudah berlangganan setiap minggu selama 5 tahun. Sudah menjadi tradisi keluarga yang sangat kami jaga.',
+        quote: 'Kami sudah langganan setiap minggu. Tinggal order via WA, pilih tanggal pickup, dan rotinya selalu fresh. Praktis banget!',
         name: 'Keluarga Wijaya',
-        role: 'Pelanggan Sejak 2019'
+        role: 'Member Sejak 2019'
     },
     {
         id: '3',
-        quote: 'Croissant-nya benar-benar luar biasa — flaky sempurna dan butternya berasa banget. Saya rela datang dari Bekasi hanya untuk ini!',
+        quote: 'Croissant-nya flaky sempurna karena dibuat fresh setiap batch. Worth the wait! Rela indent H-2 demi rasa yang luar biasa.',
         name: 'Pak Michael R.',
         role: 'Food Enthusiast'
     }

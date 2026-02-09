@@ -1,29 +1,26 @@
 <script lang="ts">
-	import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Wheat, ArrowUp } from 'lucide-svelte';
-	import { fly, fade } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { Instagram, MapPin, Phone, Mail, Croissant, ArrowUp, MessageCircle } from 'lucide-svelte';
 
 	const currentYear = new Date().getFullYear();
 
 	const socialLinks = [
-		{ icon: Facebook, label: 'Facebook', href: '#' },
-		{ icon: Instagram, label: 'Instagram', href: '#' },
-		{ icon: Twitter, label: 'Twitter', href: '#' }
+		{ icon: Instagram, label: 'Instagram', href: 'https://instagram.com/rotiartisan' },
+		{ icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/6281234567890' }
 	];
 
 	const quickLinks = [
 		{ label: 'Beranda', href: '#home' },
-		{ label: 'Menu', href: '#menu' },
-		{ label: 'Tentang Kami', href: '#story' },
+		{ label: 'Menu PO', href: '#menu' },
+		{ label: 'Cara Order', href: '#how-to-order' },
 		{ label: 'Testimoni', href: '#reviews' },
-		{ label: 'Lokasi', href: '#visit' }
+		{ label: 'FAQ', href: '#faq' }
 	];
 </script>
 
-<footer class="relative overflow-hidden bg-[var(--color-primary-800)] text-white">
-	<!-- Decorative element -->
+<footer class="relative overflow-hidden bg-linear-to-b from-cream-100 to-cream-200">
+	<!-- Decorative top border -->
 	<div
-		class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[var(--color-primary-400)] via-[var(--color-cream-300)] to-[var(--color-primary-400)]"
+		class="absolute top-0 left-0 h-1 w-full bg-linear-to-r from-primary-300 via-accent-300 to-primary-300"
 	></div>
 
 	<div class="container-custom py-12 md:py-16">
@@ -32,25 +29,27 @@
 			<div>
 				<div class="group mb-4 flex items-center gap-3">
 					<div
-						class="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-white/20"
+						class="flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary-400 to-primary-600 shadow-[−4px_-4px_8px_rgba(255,255,255,0.8),4px_4px_8px_rgba(0,0,0,0.1)]"
 					>
-						<Wheat
-							class="h-6 w-6 text-white transition-transform duration-500 group-hover:rotate-12"
-						/>
+						<Croissant class="h-6 w-6 text-white" />
 					</div>
-					<span class="font-heading text-2xl font-semibold">Roti Artisan</span>
+					<div>
+						<span class="font-heading text-2xl font-bold text-neutral-800">Roti Artisan</span>
+						<span class="block text-xs text-neutral-500">Open Order</span>
+					</div>
 				</div>
-				<p class="mb-6 leading-relaxed text-[var(--color-primary-200)]">
-					Bakery keluarga, dipanggang dengan cinta. Menghadirkan roti dan pastry artisan dengan
-					resep turun-temurun sejak 1998.
+				<p class="mb-6 leading-relaxed text-neutral-600">
+					Roti dan pastry artisan dibuat fresh to order dengan resep turun-temurun. Pesan sekarang,
+					nikmati kesegaran maksimal!
 				</p>
 				<div class="flex gap-3">
 					{#each socialLinks as link, i}
 						<a
 							href={link.href}
-							class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-white/20"
+							class="neu-flat flex h-10 w-10 items-center justify-center rounded-full text-neutral-600 transition-all duration-300 hover:-translate-y-0.5 hover:text-primary-600"
 							aria-label={link.label}
-							style="transition-delay: {i * 50}ms"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							<link.icon class="h-5 w-5" />
 						</a>
@@ -60,15 +59,18 @@
 
 			<!-- Quick Links -->
 			<div>
-				<h3 class="mb-4 font-heading text-lg font-semibold">Menu Cepat</h3>
+				<h3 class="mb-4 font-heading text-lg font-bold text-neutral-800">Menu Cepat</h3>
 				<ul class="space-y-2">
-					{#each quickLinks as link, i}
+					{#each quickLinks as link}
 						<li>
 							<a
 								href={link.href}
-								class="inline-flex items-center gap-2 text-[var(--color-primary-200)] transition-all duration-300 hover:translate-x-2 hover:text-white"
+								class="group/link inline-flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:translate-x-2 hover:text-primary-600"
 							>
-								<span class="text-xs transition-transform duration-300">→</span>
+								<span
+									class="text-xs transition-transform duration-300 group-hover/link:translate-x-1"
+									>→</span
+								>
 								{link.label}
 							</a>
 						</li>
@@ -76,45 +78,66 @@
 				</ul>
 			</div>
 
-			<!-- Contact -->
+			<!-- Contact & Order -->
 			<div>
-				<h3 class="mb-4 font-heading text-lg font-semibold">Kunjungi Kami</h3>
-				<address class="space-y-3 text-[var(--color-primary-200)] not-italic">
-					<p class="group flex items-start gap-3 transition-colors duration-300 hover:text-white">
-						<MapPin
-							class="mt-0.5 h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-						/>
-						<span>Jl. Roti Hangat No. 123, Jakarta Selatan, 12345</span>
-					</p>
-					<p class="group flex items-center gap-3">
-						<Phone
-							class="h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
-						/>
-						<a href="tel:+6221123456789" class="transition-colors hover:text-white"
-							>(021) 1234-5678</a
+				<h3 class="mb-4 font-heading text-lg font-bold text-neutral-800">Hubungi Kami</h3>
+				<address class="space-y-3 text-neutral-600 not-italic">
+					<p class="flex items-center gap-3">
+						<MessageCircle class="h-4 w-4 shrink-0" />
+						<a
+							href="https://wa.me/6281234567890"
+							class="transition-colors hover:text-primary-600"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
+							0812-3456-7890 (WhatsApp)
+						</a>
 					</p>
-					<p class="group flex items-center gap-3">
-						<Mail
-							class="h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-						/>
-						<a href="mailto:halo@rotiartisan.id" class="transition-colors hover:text-white"
-							>halo@rotiartisan.id</a
+					<p class="flex items-center gap-3">
+						<Instagram class="h-4 w-4 shrink-0" />
+						<a
+							href="https://instagram.com/rotiartisan"
+							class="transition-colors hover:text-primary-600"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
+							@rotiartisan
+						</a>
+					</p>
+					<p class="flex items-center gap-3">
+						<Mail class="h-4 w-4 shrink-0" />
+						<a href="mailto:order@rotiartisan.id" class="transition-colors hover:text-primary-600">
+							order@rotiartisan.id
+						</a>
+					</p>
+					<p class="flex items-center gap-3">
+						<MapPin class="h-4 w-4 shrink-0" />
+						<span>Jakarta Selatan (Self Pickup)</span>
 					</p>
 				</address>
+
+				<!-- Order CTA -->
+				<a
+					href="https://wa.me/6281234567890?text=Halo, saya ingin order roti"
+					class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#25d366] to-[#128c7e] px-6 py-3.5 font-semibold text-white shadow-[−4px_-4px_8px_rgba(255,255,255,0.6),4px_4px_8px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-0.5"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<MessageCircle class="h-5 w-5" />
+					Pesan via WhatsApp
+				</a>
 			</div>
 		</div>
 	</div>
 
 	<!-- Bottom Bar -->
-	<div class="border-t border-white/10">
+	<div class="border-t border-cream-300">
 		<div
-			class="container-custom flex flex-col items-center justify-between gap-4 py-6 text-sm text-[var(--color-primary-300)] md:flex-row"
+			class="container-custom flex flex-col items-center justify-between gap-4 py-6 text-sm text-neutral-500 md:flex-row"
 		>
 			<p>© {currentYear} Roti Artisan. Hak cipta dilindungi.</p>
 			<p class="flex items-center gap-1">
-				Dibuat dengan <span class="animate-pulse text-red-400">♥</span> dan tepung berkualitas
+				Dibuat dengan <span class="text-primary-500">♥</span> dan tepung berkualitas
 			</p>
 		</div>
 	</div>
@@ -122,15 +145,9 @@
 	<!-- Back to top button -->
 	<a
 		href="#home"
-		class="absolute right-6 bottom-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-white/20 md:bottom-6"
+		class="neu-flat absolute right-6 bottom-20 flex h-10 w-10 items-center justify-center rounded-full text-neutral-600 transition-all duration-300 hover:-translate-y-0.5 hover:text-primary-600 md:bottom-6"
 		aria-label="Kembali ke atas"
 	>
 		<ArrowUp class="h-5 w-5" />
 	</a>
 </footer>
-
-<style>
-	.font-heading {
-		font-family: var(--font-heading);
-	}
-</style>
